@@ -2,18 +2,28 @@ import { Home, CreditCard, BarChart2, Bell, Settings, LogOut } from "lucide-reac
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();
   const { toast } = useToast();
 
-  const handleLogout = () => {
-    toast({
-      title: "Logging out",
-      description: "You have been successfully logged out",
-    });
-    // In a real app, you would handle the logout logic here
+  const handleLogout = async () => {
+    try {
+      await supabase.auth.signOut();
+      toast({
+        title: "Logged out successfully",
+        description: "You have been logged out of your account",
+      });
+      navigate("/login");
+    } catch (error) {
+      toast({
+        title: "Error logging out",
+        description: "There was a problem logging out. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const isActive = (path: string) => location.pathname === path;

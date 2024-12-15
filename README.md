@@ -1,69 +1,115 @@
-# Welcome to your Lovable project
+<div align="center">
+  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Modern Wallet Dashboard" width="100%" />
 
-## Project info
+  <h1>Modern Wallet Dashboard</h1>
+  
+  <p>A sophisticated financial management platform built with React, TypeScript, and Supabase.</p>
 
-**URL**: https://lovable.dev/projects/c8d42d7f-2335-4fcf-94a4-c1c7f88b175a
+  <div>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  </div>
+</div>
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+- **Real-time Transaction Tracking**: Monitor your financial activities with instant updates
+- **Smart Analytics**: Visualize your spending patterns with interactive charts
+- **Secure Authentication**: Powered by Supabase for reliable user management
+- **Intelligent Search**: Quick access to past transactions with smart filtering
+- **Customizable Settings**: Personalize your wallet experience
+- **Responsive Design**: Seamless experience across all devices
 
-**Use Lovable**
+## 🚀 Quick Start
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c8d42d7f-2335-4fcf-94a4-c1c7f88b175a) and start prompting.
+1. **Clone the repository**
+```bash
+git clone <your-repo-url>
+cd modern-wallet
+```
 
-Changes made via Lovable will be committed automatically to this repo.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. **Start the development server**
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Built With
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Frontend Framework**: React with TypeScript
+- **Styling**: Tailwind CSS + shadcn/ui
+- **State Management**: TanStack Query
+- **Backend & Auth**: Supabase
+- **Charts**: Recharts
+- **Icons**: Lucide React
 
-**Use GitHub Codespaces**
+## 📱 Core Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Dashboard
+- Overview of financial status
+- Recent transactions
+- Quick actions
+- Spending analytics
 
-## What technologies are used for this project?
+### Transactions
+- Detailed transaction history
+- Smart categorization
+- Search and filtering
+- Transaction details
 
-This project is built with .
+### Analytics
+- Spending trends
+- Category breakdown
+- Interactive charts
+- Financial insights
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Settings
+- Profile management
+- Security settings
+- Notification preferences
+- Payment methods
 
-## How can I deploy this project?
+## 🔒 Security Features
 
-Simply open [Lovable](https://lovable.dev/projects/c8d42d7f-2335-4fcf-94a4-c1c7f88b175a) and click on Share -> Publish.
+- Two-factor authentication
+- Transaction PIN
+- Biometric authentication support
+- Real-time security alerts
 
-## I want to use a custom domain - is that possible?
+## 🎯 Upcoming Features
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+- [ ] Budget planning tools
+- [ ] Bill reminders
+- [ ] Investment tracking
+- [ ] Export financial reports
+- [ ] Mobile app integration
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📞 Support
+
+For support, please open an issue in the GitHub repository or contact the development team.
+
+---
+
+<div align="center">
+  Made with ❤️ by Your Team Name
+</div>

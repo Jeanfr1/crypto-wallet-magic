@@ -3,8 +3,16 @@ import { Header } from "@/components/Header";
 import { RevenueChart } from "@/components/RevenueChart";
 import { WalletCard } from "@/components/WalletCard";
 import { ExpenseDonut } from "@/components/ExpenseDonut";
+import { useState } from "react";
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState('All');
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+    // In a real application, you would filter the data based on the selected tab
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Sidebar />
@@ -18,8 +26,9 @@ const Index = () => {
               {['All', 'Withdrawal', 'Savings', 'Deposit'].map((tab) => (
                 <button
                   key={tab}
-                  className={`px-6 py-2 rounded-full ${
-                    tab === 'All'
+                  onClick={() => handleTabChange(tab)}
+                  className={`px-6 py-2 rounded-full transition-colors ${
+                    tab === activeTab
                       ? 'bg-primary text-white'
                       : 'text-muted-foreground hover:text-primary'
                   }`}

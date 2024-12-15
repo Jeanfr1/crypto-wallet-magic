@@ -1,5 +1,6 @@
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
+import { CreditCard } from "lucide-react";
 
 const Transactions = () => {
   return (
@@ -17,7 +18,7 @@ const Transactions = () => {
               <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-background/50">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-primary">TX</span>
+                    <CreditCard className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold">Transaction #{i}</h3>

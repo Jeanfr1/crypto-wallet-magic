@@ -1,4 +1,4 @@
-import { Search } from "lucide-react";
+import { Search, UserRound } from "lucide-react";
 
 export function Header() {
   return (
@@ -17,7 +17,9 @@ export function Header() {
         
         <div className="flex items-center gap-2">
           <span>Hi Stefan!</span>
-          <div className="w-10 h-10 rounded-full bg-primary/20"></div>
+          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+            <UserRound className="w-6 h-6 text-primary" />
+          </div>
         </div>
       </div>
     </header>

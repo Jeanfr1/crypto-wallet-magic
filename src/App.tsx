@@ -3,9 +3,10 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { createBrowserSupabaseClient } from "@supabase/auth-helpers-shared";
+import { createClient } from '@supabase/supabase-js';
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Transactions from "./pages/Transactions";
@@ -16,7 +17,10 @@ import Settings from "./pages/Settings";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [supabaseClient] = useState(() => createBrowserSupabaseClient());
+  const [supabaseClient] = useState(() => createClient(
+    "https://bjdubmdryfjjnvzypfmx.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqZHVibWRyeWZqam52enlwZm14Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQwODk3MzksImV4cCI6MjA0OTY2NTczOX0.yyj-M-Y4HhCkvU5k4JkeixscOgO_uB-z3PslS1AI46U"
+  ));
 
   return (
     <SessionContextProvider supabaseClient={supabaseClient}>

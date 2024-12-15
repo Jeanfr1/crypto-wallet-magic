@@ -1,11 +1,46 @@
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
-import { Home } from "lucide-react";
+import { Home, Bell, ArrowUpRight, ArrowDownRight, Shield, CreditCard } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Notifications = () => {
   const navigate = useNavigate();
+
+  const notifications = [
+    {
+      id: 1,
+      type: "payment",
+      title: "Payment Received",
+      description: "You received $250.00 from John Doe",
+      icon: <ArrowDownRight className="w-5 h-5 text-green-500" />,
+      time: "2 hours ago",
+    },
+    {
+      id: 2,
+      type: "security",
+      title: "Security Alert",
+      description: "New device logged into your account",
+      icon: <Shield className="w-5 h-5 text-orange-500" />,
+      time: "5 hours ago",
+    },
+    {
+      id: 3,
+      type: "payment",
+      title: "Payment Sent",
+      description: "You sent $120.00 to Jane Smith",
+      icon: <ArrowUpRight className="w-5 h-5 text-red-500" />,
+      time: "Yesterday",
+    },
+    {
+      id: 4,
+      type: "card",
+      title: "Card Update",
+      description: "Your virtual card will expire in 30 days",
+      icon: <CreditCard className="w-5 h-5 text-blue-500" />,
+      time: "2 days ago",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -15,7 +50,10 @@ const Notifications = () => {
         <Header />
         
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold">Notifications</h2>
+          <div className="flex items-center gap-3">
+            <Bell className="w-6 h-6 text-primary" />
+            <h2 className="text-2xl font-bold">Notifications</h2>
+          </div>
           <Button 
             variant="outline" 
             size="sm" 
@@ -27,39 +65,32 @@ const Notifications = () => {
           </Button>
         </div>
 
-        <div className="glass-card p-6 rounded-2xl">
+        <div className="glass-card p-6 rounded-2xl space-y-6">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-semibold">Recent Notifications</h3>
+            <Button variant="ghost" size="sm">Mark all as read</Button>
+          </div>
+
           <div className="space-y-4">
-            <div className="flex items-center justify-between p-4 border-b">
-              <div>
-                <h3 className="font-medium">New Transaction Alert</h3>
-                <p className="text-sm text-muted-foreground">You received a new payment of $50.00</p>
+            {notifications.map((notification) => (
+              <div
+                key={notification.id}
+                className="flex items-start gap-4 p-4 rounded-xl bg-card hover:bg-accent/50 transition-colors cursor-pointer"
+              >
+                <div className="p-2 rounded-full bg-background">
+                  {notification.icon}
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-medium">{notification.title}</h4>
+                  <p className="text-sm text-muted-foreground">{notification.description}</p>
+                  <span className="text-xs text-muted-foreground mt-1 block">{notification.time}</span>
+                </div>
               </div>
-              <span className="text-sm text-muted-foreground">2 hours ago</span>
-            </div>
-            
-            <div className="flex items-center justify-between p-4 border-b">
-              <div>
-                <h3 className="font-medium">Security Update</h3>
-                <p className="text-sm text-muted-foreground">Your password was changed successfully</p>
-              </div>
-              <span className="text-sm text-muted-foreground">1 day ago</span>
-            </div>
-            
-            <div className="flex items-center justify-between p-4 border-b">
-              <div>
-                <h3 className="font-medium">Account Update</h3>
-                <p className="text-sm text-muted-foreground">Your profile information has been updated</p>
-              </div>
-              <span className="text-sm text-muted-foreground">3 days ago</span>
-            </div>
-            
-            <div className="flex items-center justify-between p-4">
-              <div>
-                <h3 className="font-medium">Welcome!</h3>
-                <p className="text-sm text-muted-foreground">Thank you for joining our platform</p>
-              </div>
-              <span className="text-sm text-muted-foreground">1 week ago</span>
-            </div>
+            ))}
+          </div>
+
+          <div className="flex justify-center">
+            <Button variant="outline">Load More</Button>
           </div>
         </div>
       </main>

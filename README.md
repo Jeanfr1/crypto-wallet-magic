@@ -111,5 +111,5 @@ For support, please open an issue in the GitHub repository or contact the develo
 ---
 
 <div align="center">
-  Made with ❤️ by Your Team Name
+  Made with ❤️ by Josean Araujo
 </div>
